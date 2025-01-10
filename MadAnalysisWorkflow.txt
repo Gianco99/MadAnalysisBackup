@@ -1,0 +1,87 @@
+./bin/ma5 --recolevel
+import samples/SUEPs/ZH_test.root as signalset
+set main.lumi = 137.8
+set signalset.xsection = .087696
+set main.graphic_render = matplotlib
+
+define muon = mu+ mu-
+define electron = e+ e- 
+define lepton = e+ e- mu+ mu-
+
+select (muon) PT >= 10
+reject (muon) ABSETA > 2.4
+reject (muon) D0 > 0.02 or D0 < -0.02
+reject (muon) DZ > 0.1 or DZ < -0.1
+
+select (electron) PT >= 10
+reject (electron) ABSETA > 2.5
+reject (electron) (ABSETA > 1.444) and (ABSETA < 1.566)
+reject (electron) (ABSETA < 1.479) and (D0 < -0.05 or D0 > 0.05)
+reject (electron) (ABSETA > 1.479) and (D0 < -0.1 or D0 > 0.1)
+reject (electron) (ABSETA < 1.479) and (D0 < -0.1 or D0 > 0.1)
+reject (electron) (ABSETA > 1.479) and (D0 < -0.2 or D0 > 0.2)
+
+select (N(muon) == 2 or N(electron) == 2) and (N(lepton) == 2)
+select (N(mu+) == 1 and N(mu-) == 1) or (N(e+) == 1 and N(e-) == 1) 
+select PT(lepton[1]) >= 25
+
+select (j) ABSETA < 2.5
+select (j) DELTAR (lepton) > 0.4 
+
+select (M(lepton[1] lepton[2]) <= 120) and (M(lepton[1] lepton[2]) >= 60)
+select PT(lepton[1] lepton[2]) >= 25
+select N(b) == 0
+
+plot M(lepton[1] lepton[2]) 60 60 120
+plot PT(lepton[1]) 200 0 200
+plot PT(lepton[2]) 200 0 200
+plot ETA(lepton[1]) 50 -2.5 2.5
+plot ETA(lepton[2]) 50 -2.5 2.5
+plot PT(j[1]) 500 0 500
+plot NTRACKS(j[1]) 40 0 60
+
+MET filters may not be necessary for MC signal samples
+
+SelectbyLeptons
+    Muons: Can mimic pT, eta, and dxy/z. Loose id just requires identification by PF to be a muon, kinda what we are doing here. 
+           pfIsoId>=2 == >=reco::Muon::PFIsoLoose 
+           In Delphes:  set DeltaRMax 0.4 - set PTMin 0.1 - set PTRatioMax 0.25
+    Electrons: Can mimic pT, eta, but need to be a bit looser for dxy/z due to endcap distinction.
+        MVA isolation may be difficult to mimic, just use default Delphes - https://twiki.cern.ch/twiki/bin/view/CMS/MultivariateElectronIdentificationRun2#General_Purpose_MVA_training_det
+    Selection of two leptons of OSSF implemented easily, along with leading lepton pT cut
+
+SelectbyJet
+    pT and eta cut implemented. JetID has tight lepton vetos, not really implemented. Jet-Lepton cleaning implemented.
+
+
+#### Running Delphes
+./bin/ma5 --recolevel
+set main.fastsim.package = delphes
+set main.fastsim.detector = cms
+import samples/SUEPs/Hadronic_7_7/* as signalset
+
+To replace DelphesCard - tools/SampleAnalyzer/Interfaces/delphes
+
+pT Selection of 60 GeV in the Delphes card
+
+Modifed DelphesTreeReader to set FatJet tracks to NCharged
+
+### Recompiling
+Modify User.cpp and .h 
+source setup.sh
+make 
+Make a txt file linking all the file names we want to use
+./MadAnalysis5job fileList.txt
+
+#### Other
+plot PT(mu+) 20 0 100
+plot PT(mu-) 20 0 100
+plot PT(muon) 20 0 100
+plot ETA(mu+) 20 -2.5 2.5
+plot ETA(mu-) 20 -2.5 2.5
+plot ETA(muon) 20 -2.5 2.5
+plot N(mu+) 5 0 5
+plot N(mu-) 5 0 5
+plot N(muon) 5 0 5
+plot M(mu+ mu-) 20 60 120 
+
