@@ -58,7 +58,62 @@ SelectbyJet
 ./bin/ma5 --recolevel
 set main.fastsim.package = delphes
 set main.fastsim.detector = cms
-import samples/SUEPs/Hadronic_7_7/* as signalset
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_2_2/* as signalset
+submit Hadronic_2_2_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_3_p75/* as signalset
+submit Hadronic_3_p75_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_3_12/* as signalset
+submit Hadronic_3_12_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_5_5/* as signalset
+submit Hadronic_5_5_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_7_7/* as signalset
+submit Hadronic_7_7_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_8_2/* as signalset
+submit Hadronic_8_2_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_8_32/* as signalset
+submit Hadronic_8_32_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_2_2/* as signalset
+submit Generic_2_2_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_5_5/* as signalset
+submit Generic_5_5_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_7_7/* as signalset
+submit Generic_7_7_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_2_2/* as signalset
+submit Leptonic_2_2_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_5_5/* as signalset
+submit Leptonic_5_5_Test
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_7_7/* as signalset
+submit Leptonic_7_7_Test
+N
+
+
+set main.fastsim.package = delphes
+set main.fastsim.detector = atlas
 
 To replace DelphesCard - tools/SampleAnalyzer/Interfaces/delphes
 

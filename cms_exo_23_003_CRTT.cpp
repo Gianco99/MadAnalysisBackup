@@ -314,7 +314,7 @@ MAbool user::Initialize(const MA5::Configuration& cfg,
   PHYSICS->recConfig().UseDeltaRIsolation(0.5);
 
   // ===== Signal region ===== //
-  Manager()->AddRegionSelection("SR");
+  Manager()->AddRegionSelection("CRTT");
 
   // ===== Selections ===== //
   Manager()->AddCut("twoOSSFLeptons");

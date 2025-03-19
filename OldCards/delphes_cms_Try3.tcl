@@ -90,14 +90,10 @@ module Efficiency ChargedHadronTrackingEfficiency {
 
   # tracking efficiency formula for charged hadrons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
-                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 2.0)   * (0.99) +
-                                           (abs(eta) <= 1.5) * (pt > 2.0   && pt <= 6.0)   * (0.85) +
-                                           (abs(eta) <= 1.5) * (pt > 6.0   && pt <= 20.0)  * (0.78) +
-                                           (abs(eta) <= 1.5) * (pt > 20.0)                 * (0.50) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 2.0)   * (0.90) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 2.0   && pt <= 6.0)   * (0.75) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 6.0   && pt <= 20.0)  * (0.63) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 20.0)                 * (0.40) +
+                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.76) +
+                                           (abs(eta) <= 1.5) * (pt > 1.0)                  * (0.90) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.66) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0)                  * (0.80) +
                          (abs(eta) > 2.5)                                                  * (0.00)}
 }
 
@@ -113,14 +109,14 @@ module Efficiency ElectronTrackingEfficiency {
 
   # tracking efficiency formula for electrons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
-                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.40) +
-                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.73) +
+                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.57) +
+                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.90) +
                                            (abs(eta) <= 1.5) * (pt > 10   && pt <= 100)    * (0.9286102284672921) +
                                            (abs(eta) <= 1.5) * (pt > 100   && pt <= 1000)  * (0.9386260305663984) +
                                            (abs(eta) <= 1.5) * (pt > 1000)                 * (0.99) +
 
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.30) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.68) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.37) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.83) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 10   && pt <= 100)    * (0.8684176008789212) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 100   && pt <= 1000)  * (0.8677729166303533) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1000)                 * (0.90) +
@@ -139,14 +135,14 @@ module Efficiency MuonTrackingEfficiency {
 
   # tracking efficiency formula for muons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
-                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.50) +
-                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.94) +
+                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.67) +
+                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.99) +
                                            (abs(eta) <= 1.5) * (pt > 10   && pt <= 100)    * (0.9933941535406676) +
                                            (abs(eta) <= 1.5) * (pt > 100   && pt <= 1000)  * (0.9911753088193048) +
                                            (abs(eta) <= 1.5) * (pt > 1000 )                * (0.99 * exp(0.5 - pt*5.0e-4)) +
 
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.50) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.89) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.62) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.93) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 10   && pt <= 100)    * (0.9382469816233004) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 100  && pt <= 1000)   * (0.9366391184573003) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1000)                 * (0.98 * exp(0.5 - pt*5.0e-4)) +
@@ -181,9 +177,10 @@ module MomentumSmearing ElectronMomentumSmearing {
   # set ResolutionFormula {resolution formula as a function of eta and energy}
 
   # resolution formula for electrons
-  set ResolutionFormula {                  (abs(eta) <= 0.5) * (pt > 0.1) * sqrt(2.2e-2 + pt^2*1.2e-3^2) +
-                         (abs(eta) > 0.5 && abs(eta) <= 1.5) * (pt > 0.1) * sqrt(5.9e-2 + pt^2*2.2e-3^2) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1) * sqrt(4.5e-1 + pt^2*2.8e-3^2)}
+  # based on arXiv:1502.02701
+  set ResolutionFormula {                  (abs(eta) <= 0.5) * (pt > 0.1) * sqrt(0.03^2 + pt^2*1.3e-3^2) +
+                         (abs(eta) > 0.5 && abs(eta) <= 1.5) * (pt > 0.1) * sqrt(0.025^2 + pt^2*1.7e-3^2) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1) * sqrt(0.15^2 + pt^2*3.1e-3^2)}
 }
 
 ###############################
@@ -197,9 +194,9 @@ module MomentumSmearing MuonMomentumSmearing {
   # set ResolutionFormula {resolution formula as a function of eta and pt}
 
   # resolution formula for muons
-  set ResolutionFormula {                  (abs(eta) <= 0.5) * (pt > 0.1) * sqrt(1.4e-4 + pt^2*1.5e-4^2) +
-                         (abs(eta) > 0.5 && abs(eta) <= 1.5) * (pt > 0.1) * sqrt(2.8e-4 + pt^2*1.6e-4^2) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1) * sqrt(5.9e-4 + pt^2*3.0e-4^2)}
+  set ResolutionFormula {                  (abs(eta) <= 0.5) * (pt > 0.1) * sqrt(0.01^2 + pt^2*1.0e-4^2) +
+                         (abs(eta) > 0.5 && abs(eta) <= 1.5) * (pt > 0.1) * sqrt(0.015^2 + pt^2*1.5e-4^2) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1) * sqrt(0.025^2 + pt^2*3.5e-4^2)}
 }
 
 ##############
@@ -666,7 +663,7 @@ module FastJetFinder FastJetFinder {
   set JetAlgorithm 6
   set ParameterR 0.4
 
-  set JetPTMin 10.0
+  set JetPTMin 15.0
 }
 
 ##################
@@ -751,25 +748,47 @@ module BTagging BTagging {
   # default efficiency formula (misidentification rate)
   #add EfficiencyFormula {0} {0.1+0.000038*pt}
   add EfficiencyFormula {0} {  
-                              (pt <= 40.0) * (abs(eta) <= 1.5) * (0.144) +
-                              (pt <= 40.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.236) +
-                              (pt > 40.0 && pt <= 50.0) * (abs(eta) <= 1.5) * (0.104) +
-                              (pt > 40.0 && pt <= 50.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.164) +
-                              (pt > 50.0 && pt <= 60.0) * (abs(eta) <= 1.5) * (0.086) +
-                              (pt > 50.0 && pt <= 60.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.132) +
-                              (pt > 60.0 && pt <= 80.0) * (abs(eta) <= 1.5) * (0.075) +
-                              (pt > 60.0 && pt <= 80.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.114) +
-                              (pt > 80.0 && pt <= 100.0) * (abs(eta) <= 1.5) * (0.067) +
-                              (pt > 80.0 && pt <= 100.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.098) +
-                              (pt > 100.0 && pt <= 150.0) * (abs(eta) <= 1.5) * (0.063) +
-                              (pt > 100.0 && pt <= 150.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.094) +
-                              (pt > 150.0 && pt <= 200.0) * (abs(eta) <= 1.5) * (0.068) +
-                              (pt > 150.0 && pt <= 200.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.108) +
-                              (pt > 200.0 && pt <= 500.0) * (abs(eta) <= 1.5) * (0.105) +
-                              (pt > 200.0 && pt <= 500.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.176) +
+                              (pt <= 40.0) * (abs(eta) <= 1.5) * (0.144*1.5) +
+                              (pt <= 40.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.236*1.5) +
+                              (pt > 40.0 && pt <= 50.0) * (abs(eta) <= 1.5) * (0.104*1.5) +
+                              (pt > 40.0 && pt <= 50.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.164*1.5) +
+                              (pt > 50.0 && pt <= 60.0) * (abs(eta) <= 1.5) * (0.086*1.5) +
+                              (pt > 50.0 && pt <= 60.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.132*1.5) +
+                              (pt > 60.0 && pt <= 80.0) * (abs(eta) <= 1.5) * (0.075*1.5) +
+                              (pt > 60.0 && pt <= 80.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.114*1.5) +
+                              (pt > 80.0 && pt <= 100.0) * (abs(eta) <= 1.5) * (0.067*1.5) +
+                              (pt > 80.0 && pt <= 100.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.098*1.5) +
+                              (pt > 100.0 && pt <= 150.0) * (abs(eta) <= 1.5) * (0.063*1.5) +
+                              (pt > 100.0 && pt <= 150.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.094*1.5) +
+                              (pt > 150.0 && pt <= 200.0) * (abs(eta) <= 1.5) * (0.068*1.5) +
+                              (pt > 150.0 && pt <= 200.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.108*1.5) +
+                              (pt > 200.0 && pt <= 500.0) * (abs(eta) <= 1.5) * (0.105*1.5) +
+                              (pt > 200.0 && pt <= 500.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.176*1.5) +
                               (pt > 500.0) * (abs(eta) <= 1.5) * (0.282) +
                               (pt > 500.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.421)
   }
+#  add EfficiencyFormula {0} {  
+#                              (pt <= 40.0) * (abs(eta) <= 1.5) * (0.144) +
+#                              (pt <= 40.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.236) +
+#                              (pt > 40.0 && pt <= 50.0) * (abs(eta) <= 1.5) * (0.104) +
+#                              (pt > 40.0 && pt <= 50.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.164) +
+#                              (pt > 50.0 && pt <= 60.0) * (abs(eta) <= 1.5) * (0.086) +
+#                              (pt > 50.0 && pt <= 60.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.132) +
+#                              (pt > 60.0 && pt <= 80.0) * (abs(eta) <= 1.5) * (0.075) +
+#                              (pt > 60.0 && pt <= 80.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.114) +
+#                              (pt > 80.0 && pt <= 100.0) * (abs(eta) <= 1.5) * (0.067) +
+#                              (pt > 80.0 && pt <= 100.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.098) +
+#                              (pt > 100.0 && pt <= 150.0) * (abs(eta) <= 1.5) * (0.063) +
+#                              (pt > 100.0 && pt <= 150.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.094) +
+#                              (pt > 150.0 && pt <= 200.0) * (abs(eta) <= 1.5) * (0.068) +
+#                              (pt > 150.0 && pt <= 200.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.108) +
+#                              (pt > 200.0 && pt <= 500.0) * (abs(eta) <= 1.5) * (0.105) +
+#                              (pt > 200.0 && pt <= 500.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.176) +
+#                              (pt > 500.0) * (abs(eta) <= 1.5) * (0.282) +
+#                              (pt > 500.0) * (abs(eta) > 1.5 && abs(eta) <= 2.5) * (0.421)
+#  }
+
+
 
   # efficiency formula for c-jets (misidentification rate)
   add EfficiencyFormula {4} {0.25*tanh(0.018*pt)*(1/(1+ 0.0013*pt))}

@@ -90,14 +90,10 @@ module Efficiency ChargedHadronTrackingEfficiency {
 
   # tracking efficiency formula for charged hadrons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
-                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 2.0)   * (0.99) +
-                                           (abs(eta) <= 1.5) * (pt > 2.0   && pt <= 6.0)   * (0.85) +
-                                           (abs(eta) <= 1.5) * (pt > 6.0   && pt <= 20.0)  * (0.78) +
-                                           (abs(eta) <= 1.5) * (pt > 20.0)                 * (0.50) +
+                                           (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 2.0)   * (0.98) +
+                                           (abs(eta) <= 1.5) * (pt > 2.0)                  * (0.80) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 2.0)   * (0.90) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 2.0   && pt <= 6.0)   * (0.75) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 6.0   && pt <= 20.0)  * (0.63) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 20.0)                 * (0.40) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 2.0)                  * (0.65) +
                          (abs(eta) > 2.5)                                                  * (0.00)}
 }
 
@@ -114,13 +110,13 @@ module Efficiency ElectronTrackingEfficiency {
   # tracking efficiency formula for electrons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
                                            (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.40) +
-                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.73) +
+                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.75) +
                                            (abs(eta) <= 1.5) * (pt > 10   && pt <= 100)    * (0.9286102284672921) +
                                            (abs(eta) <= 1.5) * (pt > 100   && pt <= 1000)  * (0.9386260305663984) +
                                            (abs(eta) <= 1.5) * (pt > 1000)                 * (0.99) +
 
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.30) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.68) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.70) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 10   && pt <= 100)    * (0.8684176008789212) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 100   && pt <= 1000)  * (0.8677729166303533) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1000)                 * (0.90) +
@@ -140,13 +136,13 @@ module Efficiency MuonTrackingEfficiency {
   # tracking efficiency formula for muons
   set EfficiencyFormula {                                                    (pt <= 0.1)   * (0.00) +
                                            (abs(eta) <= 1.5) * (pt > 0.1   && pt <= 1.0)   * (0.50) +
-                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.94) +
+                                           (abs(eta) <= 1.5) * (pt > 1.0   && pt <= 10)    * (0.95) +
                                            (abs(eta) <= 1.5) * (pt > 10   && pt <= 100)    * (0.9933941535406676) +
                                            (abs(eta) <= 1.5) * (pt > 100   && pt <= 1000)  * (0.9911753088193048) +
                                            (abs(eta) <= 1.5) * (pt > 1000 )                * (0.99 * exp(0.5 - pt*5.0e-4)) +
 
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 0.1   && pt <= 1.0)   * (0.50) +
-                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.89) +
+                         (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1.0   && pt <= 10)    * (0.90) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 10   && pt <= 100)    * (0.9382469816233004) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 100  && pt <= 1000)   * (0.9366391184573003) +
                          (abs(eta) > 1.5 && abs(eta) <= 2.5) * (pt > 1000)                 * (0.98 * exp(0.5 - pt*5.0e-4)) +
