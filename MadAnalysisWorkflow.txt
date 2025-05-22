@@ -59,61 +59,70 @@ SelectbyJet
 set main.fastsim.package = delphes
 set main.fastsim.detector = cms
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_2_2/* as signalset
-submit Hadronic_2_2_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Hadronic_2_2/* as signalset
+submit WH_Hadronic_2_2_DYEffs_MiniPen
+N
+
+import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_3_3/* as signalset
+submit ZH_Hadronic_3_3_DYEffs_MiniPen
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_3_p75/* as signalset
-submit Hadronic_3_p75_Test
+submit ZH_Hadronic_3_p75_DYEffs_MiniPen
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_3_12/* as signalset
-submit Hadronic_3_12_Test
+submit ZH_Hadronic_3_12_DYEffs_MiniPen
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_5_5/* as signalset
-submit Hadronic_5_5_Test
+submit ZH_Hadronic_5_5_DYEffs_MiniPen
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_7_7/* as signalset
-submit Hadronic_7_7_Test
+submit ZH_Hadronic_7_7_DYEffs_MiniPen_Attempt2
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_8_2/* as signalset
-submit Hadronic_8_2_Test
+submit ZH_Hadronic_8_2_DYEffs_MiniPen
 N
 
 import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Hadronic_8_32/* as signalset
 submit Hadronic_8_32_Test
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_2_2/* as signalset
-submit Generic_2_2_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Generic_2_2/* as signalset
+submit WH_Generic_2_2_DYEffs_MiniPen
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_5_5/* as signalset
-submit Generic_5_5_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Generic_5_5/* as signalset
+submit WH_Generic_5_5_DYEffs_MiniPen
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Generic_7_7/* as signalset
-submit Generic_7_7_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Generic_7_7/* as signalset
+submit WH_Generic_7_7_DYEffs_MiniPen
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_2_2/* as signalset
-submit Leptonic_2_2_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Leptonic_2_2/* as signalset
+submit WH_Leptonic_2_2_DYEffs_MiniPen
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_5_5/* as signalset
-submit Leptonic_5_5_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Leptonic_5_5/* as signalset
+submit WH_Leptonic_5_5_DYEffs_MiniPen
 N
 
-import /eos/cms/store/group/phys_exotica/SUEPs/ZH_MadAnalysis/Leptonic_7_7/* as signalset
-submit Leptonic_7_7_Test
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Leptonic_7_7/* as signalset
+submit WH_Leptonic_7_7_DYEffs_MiniPen
 N
 
+####WH
+
+import /eos/cms/store/group/phys_exotica/SUEPs/WH_MadAnalysis/Hadronic_2_2/* as signalset
+submit WH_Hadronic_2_2_OG
+N
 
 set main.fastsim.package = delphes
-set main.fastsim.detector = atlas
+set main.fastsim.detector = cms
 
 To replace DelphesCard - tools/SampleAnalyzer/Interfaces/delphes
 
