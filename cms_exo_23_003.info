@@ -1,0 +1,6 @@
+<analysis id="cms_exo_23_003">
+  <lumi>137.8</lumi> <!-- in fb^-1 -->
+    <region type="signal" id="ABCD_A">
+        <nobs> 153904 </nobs>
+        <nb> 144604.8499295867 </nb>
+    </region></analysis>
