@@ -1,6 +1,23 @@
 <analysis id="cms_exo_24_030">
   <lumi>137.8</lumi> <!-- in fb^-1 -->
-    <region type="signal" id="ABCD_A">
-        <nobs> 60622 </nobs>
-        <nb> 61517.88836080511 </nb>
-    </region></analysis>
+  <region type="signal" id="ABCD_SR0_SR">
+      <nobs> 56220 </nobs>
+      <nb> 57031.83031582026888 </nb>
+  </region>
+  <region type="signal" id="ABCD_SR1_SR">
+      <nobs> 4032 </nobs>
+      <nb> 4112.82577111792489 </nb>
+  </region>
+  <region type="signal" id="ABCD_SR2_SR">
+      <nobs> 341 </nobs>
+      <nb> 341.72565334568492 </nb>
+  </region>
+  <region type="signal" id="ABCD_SR3_SR">
+      <nobs> 29 </nobs>
+      <nb> 31.50662052123336 </nb>
+  </region>
+  <region type="signal" id="ABCD_SR4_SR">
+      <nobs> 0 </nobs>
+      <nb> 0.00000000000000 </nb>
+  </region>
+</analysis>
